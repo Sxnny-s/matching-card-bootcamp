@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+/* board */
+
+.board {
+    margin-top: 20%;
+    margin-left: 30%;
+    display: grid;
+    grid-template-rows: repeat(4,100px);
+    grid-template-columns: repeat(4,100px);
+    gap: 10px;
+}
+
+.cell {
+    border: 2px solid red;
+    background: antiquewhite;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* hidden class */
+
+.hidden {
+    visibility: hidden;
+}
