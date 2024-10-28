@@ -1,5 +1,9 @@
-// Every Cell
-const cell1 = document.getElementById('cell1').addEventListener('click',matchingGame);
+//score and reset button
+const result = document.getElementsByClassName('score')[0]
+const reset = document.getElementsByTagName('button')[0].addEventListener('click', resetGame)
+
+// Every Cell.;
+const cell1 = document.getElementById('cell1');
 const cell2 = document.getElementById('cell2');
 const cell3 = document.getElementById('cell3');
 const cell4 = document.getElementById('cell4');
@@ -40,6 +44,12 @@ const cells = [
     cell13, cell14, cell15, cell16
 ];
 
+// Set up event listeners for each cell
+cells.forEach(e => {
+    e.addEventListener('click', matchingGame)
+});
+
+
 function assignCellValues(){
    for (let i = 0; i < cells.length; i++){
     const cardValueElement = cells[i].querySelector('span');
@@ -51,11 +61,54 @@ assignCellValues()
 
 
 // Allows you to play
-// function matchingGame(e){
-//     cellClicked = e.target.querySelector('span')
-//     cellClicked.classList.toggle('hidden')
-// }
+let score = 0
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+
+function matchingGame(e){
+
+    if (lockBoard) return;
+
+    cellClicked = e.target.querySelector('span')
+    cellClicked.classList.toggle('hidden')
+    
+    if (!firstCard){
+        firstCard = cellClicked
+        return
+    }
+
+    secondCard = cellClicked
+
+    // Checks for match 
+
+    if(firstCard.textContent == secondCard.textContent){
+        firstCard.parentElement.removeEventListener('click', matchingGame);
+        secondCard.parentElement.removeEventListener('click', matchingGame);
+        resetCards()
+    }else{
+        score += 1
+        result.innerText = ` Current Score: ${score}`
+        lockBoard = true
+        setTimeout(() => {
+            firstCard.classList.toggle('hidden'); 
+            secondCard.classList.toggle('hidden'); 
+            resetCards()
+        }, 1000) // 2 second delay        
+    }
+}
 
 
-// Set up event listeners for each cell
 
+
+// reset cards and game
+
+function resetCards(){
+    firstCard = null
+    secondCard = null
+    lockBoard = false
+}
+
+function resetGame(){
+    location.reload()
+}
