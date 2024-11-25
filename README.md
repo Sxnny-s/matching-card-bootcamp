@@ -1,22 +1,30 @@
-# ♠️ Week08 Bootcamp2019a Project: Matching Card Game
+# 10-Card Memory Game
 
-### Goal: Make a 10 card memory game - users must be able to select two cards and check if they are a match. If they are a match, they stay flipped. If not, they flip back over. Game is done when all cards are matched and flipped over. Example: http://www.fruit-burst.co.uk/fun-and-games/pairs-game 
+## Goal
 
-### How to submit your code for review:
+This project is a classic memory game where the user is tasked with matching pairs of cards. The game consists of 10 cards (5 pairs) placed face down. The player flips two cards at a time and tries to match the cards. If the cards match, they stay face up; otherwise, they flip back over. The game is complete when all pairs have been matched and all cards are face up.
 
-- Fork and clone this repo
-- Create a new branch called answer
-- Checkout answer branch
-- Push to your fork
-- Issue a pull request
-- Your pull request description should contain the following:
-  - (1 to 5 no 3) I completed the challenge
-  - (1 to 5 no 3) I feel good about my code
-  - Anything specific on which you want feedback!
+## Features
 
-Example:
-```
-I completed the challenge: 5
-I feel good about my code: 4
-I'm not sure if my constructors are setup cleanly...
-```
+- **Card Matching:** Players can flip two cards at a time and check if they are a matching pair.
+- **Card Flip Back:** If the cards don't match, they will flip back over after a brief delay.
+- **Game Completion:** The game ends when all cards are flipped face up and matched.
+- **Simple UI:** A user-friendly interface that allows for easy interaction.
+
+## How to Play
+
+1. **Flip Cards:** Click on any two cards to flip them over.
+2. **Match Cards:** Try to match the cards with the same image or number.
+3. **Game Completion:** The game is finished when all cards are matched and flipped face up.
+
+## How to Run the Game
+
+### Prerequisites
+
+- **A modern web browser** (Chrome, Firefox, Safari, etc.)
+
+### Setup
+
+1. Clone or download the repository to your local machine.
+
+  
